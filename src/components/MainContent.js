@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './Header';
-import Map from '../components/Map';
 import './styles/MainContent.css'; // CSS 파일을 import
 
 function MainContent() {
