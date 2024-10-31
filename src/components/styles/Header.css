@@ -1,0 +1,29 @@
+/* Header.css */
+.header-container {
+    display: flex;
+    justify-content: space-between; /* 아이콘과 제목을 양쪽으로 배치 */
+    align-items: center; /* 수직 가운데 정렬 */
+    padding: 10px 30px; /* 상하좌우 패딩 */
+    background-color: #65c9f0; /* 헤더 배경색 */
+    color: white; /* 텍스트 색상 */
+    border-bottom: 2px solid #65c9f0; /* 헤더 아래 선 색상 */
+  }
+
+  body {
+    margin: 0; /* 기본 마진 제거 */
+    }
+  
+  .header-title {
+    margin: 0; /* 기본 마진 제거 */
+  }
+  
+  .header-icons {
+    display: flex;
+    gap: 35px; /* 아이콘 사이 간격 */
+    font-size: 24px; /* 아이콘 크기 */
+  }
+  
+  .icon {
+    cursor: pointer; /* 아이콘에 마우스 커서 포인터 효과 */
+  }
+  
