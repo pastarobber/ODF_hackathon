@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LoadingScreen from './components/auth/LoadingScreen'; // LoadingScreen 컴포넌트를 가져옵니다.
 import MainContent from './components/MainContent'; // 메인 콘텐츠 컴포넌트를 가져옵니다.
+import Login from './components/auth/Login';
 import Map from './components/Map'; 
 
 function App() {

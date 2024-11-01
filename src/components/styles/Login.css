@@ -1,0 +1,119 @@
+/* 전체 컨테이너 스타일 */
+.login-container {
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding: 20px;
+    display: flex; /* 플렉스 박스 사용 */
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    justify-content: center; /* 세로 중앙 정렬 */
+    height: 100vh; /* 전체 뷰포트 높이 */
+}
+
+.welcome-image {
+    display: block; /* 블록 요소로 설정 */
+    width: 100px; /* 원하는 크기로 조정 */
+    height: auto; /* 비율 유지 */
+    margin: 0 auto 20px; /* 상단 여백 0, 하단 여백 20px, 좌우 중앙 정렬 */
+}
+
+/* 타이틀 */
+.login-container h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* 설명 텍스트 */
+.login-container p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* 입력 필드 스타일 */
+.input-container {
+    position: relative;
+    margin-top: 20px;
+}
+
+.input-icon {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    color: #888;
+}
+
+input[type="text"] {
+    width: 80%; /* 원하시는 길이로 변경 (예: 80%) */
+    padding: 10px 10px 10px 35px;
+    margin-top: 10px;
+    margin-left: auto; /* 오른쪽 여백 자동 */
+    margin-right: auto; /* 왼쪽 여백 자동 */
+    font-size: 1rem;
+    border: none; /* 모든 테두리 제거 */
+    border-bottom: 1px solid #CCC; /* 하단 테두리 색상 변경 */
+    outline: none; /* 포커스 시 기본 윤곽선 제거 */
+}
+
+
+/* 로그인 버튼 스타일 */
+.login-button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #65c9f0; /* 버튼 배경 색상 변경 */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: #54b3db; /* 버튼 호버 색상 */
+}
+
+/* 소셜 로그인 섹션 */
+.or-sign-in {
+    margin: 20px 0 10px;
+    color: #888;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-button {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    width: 80px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-button:hover {
+    background-color: #f0f0f0;
+}
+
+.social-button svg {
+    font-size: 1.2rem;
+}
+
+.google-button {
+    color: #DB4437; /* 구글 색상 */
+}
+
+.apple-button {
+    color: #000; /* 애플 색상 (검정색) */
+}
+
+.instagram-button {
+    color: #E1306C; /* Instagram 아이콘 색상을 인스타그램 색상으로 설정 */
+}
