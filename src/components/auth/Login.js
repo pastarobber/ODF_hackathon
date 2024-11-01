@@ -1,7 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Login.css';
 
 function Login() {
+    const navigate = useNavigate();
+
+    const handleLoginClick = () => {
+        navigate('/'); // 로그인 버튼 클릭 시 '/main' 경로로 이동
+    };
+
     return (
         <div className="login-container">
             <img src="/mascot.png" alt="Welcome Mascot" className="welcome-image" />
@@ -12,7 +19,7 @@ function Login() {
                 <input type="text" placeholder="Enter email / Phone no" />
             </div>
             
-            <button className="login-button">Login</button>
+            <button className="login-button" onClick={handleLoginClick}>Login</button>
             
             <p className="or-sign-in">Or Sign In via</p>
             

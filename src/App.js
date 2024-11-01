@@ -1,41 +1,50 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import LoadingScreen from './components/auth/LoadingScreen'; // LoadingScreen 컴포넌트를 가져옵니다.
-import MainContent from './components/MainContent'; // 메인 콘텐츠 컴포넌트를 가져옵니다.
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import LoadingScreen from './components/auth/LoadingScreen';
+import MainContent from './components/MainContent';
 import Login from './components/auth/Login';
-import Map from './components/Map'; 
+import Map from './components/Map';
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate(); // useNavigate 사용
+  const location = useLocation();
+
+  useEffect(() => {
+    if (loading) {
+      const timer = setTimeout(() => {
+        setLoading(false);
+        navigate('/login'); // 로딩이 끝나면 /login으로 이동
+      }, 2000); // 로딩 시간 설정
+
+      return () => clearTimeout(timer); // 타이머 정리
+    }
+  }, [loading, navigate]);
+
+  const handleLoginSuccess = () => {
+    setLoading(false); // 로그인 성공 시 로딩 상태 해제
+    navigate('/'); // '/' 경로로 이동
+  };
+
+  return (
+    <div>
+      {loading ? (
+        <LoadingScreen />
+      ) : (
+        <Routes>
+          <Route path="/login" element={<Login onLoginSuccess={handleLoginSuccess} />} />
+          <Route path="/" element={<MainContent />} />
+          <Route path="/map" element={<Map />} />
+        </Routes>
+      )}
+    </div>
+  );
+}
+
+export default function AppWrapper() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<MainContent />} />
-        <Route path="/map" element={<Map />} /> {/* Map 페이지 추가 */}
-      </Routes>
+      <App />
     </Router>
   );
 }
-export default App;
-
-
-// function App() {
-//   const [loading, setLoading] = useState(true);
-
-//   useEffect(() => {
-//     // 2초 후에 로딩 상태를 false로 변경하여 메인 콘텐츠를 표시합니다.
-//     const timer = setTimeout(() => {
-//       setLoading(false);
-//     }, 2000); // 원하는 시간(밀리초)으로 조정 가능
-
-//     // 컴포넌트가 언마운트될 때 타이머를 정리합니다.
-//     return () => clearTimeout(timer);
-//   }, []);
-
-//   return (
-//     <div>
-//       {loading ? <LoadingScreen /> : <Map />}
-//     </div>
-//   );
-// }
-
-// export default App;
