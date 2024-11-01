@@ -17,33 +17,47 @@
     padding: 20px; /* 내부 여백 */
     background-color: #ffffff; /* 배경색 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
-    margin-top: 20px; /* info-box와의 간격 */
-    margin-left: 50px;
-    margin-right: 50px;
+    margin: 20px auto; /* 세로 여백과 가로 중앙 정렬 */
+    display: flex;
+    align-items: center; /* 내부 요소 수직 중앙 정렬 */
+    justify-content: center; /* 내부 요소 가로 중앙 정렬 */
+    width: 405px; /* 원하는 너비 */
+    height: 540px; /* 원하는 높이 */
 }
 
 /* 모바일 스타일 */
 @media (max-width: 768px) { /* 화면 너비가 768px 이하일 때 */
     .info-box {
         padding: 15px; /* 내부 여백 조정 */
-        margin: 10px; /* 위쪽과 아래쪽 여백을 통일 */
+        margin: 20px; /* 위쪽과 아래쪽 여백을 통일 */
         width: calc(100% - 60px); /* 너비를 100%에서 오른쪽 마진만큼 뺌 */
+        height: 100px; /* 원하는 높이로 설정 (예: 150px) */
         box-shadow: none; /* 그림자 효과 제거 (필요에 따라) */
+        overflow: auto; /* 내용이 넘칠 경우 스크롤이 생기도록 설정 */
         margin-left: 13px;
     }
+    .info-box h2{
+        margin: 0px; /* 문단의 기본 마진을 제거하여 줄 간격을 조정 */
+        line-height: 1.2; /* 줄 높이를 조정하여 글 사이 여백을 줄임 (1.2는 예시) */
+    }
+    .info-box p {
+        margin: 6px; /* 문단의 기본 마진을 제거하여 줄 간격을 조정 */
+        line-height: 1.2; /* 줄 높이를 조정하여 글 사이 여백을 줄임 (1.2는 예시) */
+    }
     .mini-map {
-        .mini-map {
             border: 1px solid #A2DFF7; /* 테두리 색상 */
             border-radius: 8px; /* 모서리 둥글게 */
             padding: 20px; /* 내부 여백 */
             background-color: #ffffff; /* 배경색 */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
             margin-top: 20px; /* info-box와의 간격 */
+            margin-bottom: 20px;
+            margin-left: 30px;
             width: 200px; /* 정사각형 가로 크기 */
             height: 200px; /* 정사각형 세로 크기 */
             display: flex;
             align-items: center;
             justify-content: center; /* 내용 중앙 정렬 */
-        }
     }
 }
+
